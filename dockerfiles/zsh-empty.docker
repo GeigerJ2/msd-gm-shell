@@ -1,0 +1,10 @@
+# Use Ubuntu 22.04 as the base image
+FROM ubuntu:22.04
+
+# Install vim and zsh
+RUN apt-get update && \
+    apt-get install -y vim zsh
+
+# Change default shell to zsh
+RUN chsh -s /usr/bin/zsh
+SHELL ["/usr/bin/zsh", "-c"]
