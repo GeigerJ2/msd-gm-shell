@@ -25,3 +25,5 @@ Repository for material for MSD group meeting about sexy shell setups given on 2
 
 - Underlining of existing paths/files
 -
+
+## Installation instructions via `docker`
