@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 # Install vim, git, and other utilities
-RUN apt update && apt install -y sudo apt-utils dialog vim git curl wget unzip fontconfig python3 python3-pip python3-dev python3-venv
+RUN apt update && apt install -y sudo apt-utils dialog vim git curl wget unzip fontconfig python3 python3-pip python3-dev python3-venv python-is-python3
 RUN apt install -y software-properties-common
 
 # Install zsh
@@ -30,8 +30,16 @@ RUN git clone https://github.com/aiidateam/aiida-project.git
 # Actually install aiida-core to have `verdi` commands available for fish plugin demo
 RUN pip install aiida-core
 
-# Set the default shell to zsh
-RUN chsh -s /usr/bin/zsh
+# Download the JetBrains Mono Nerd Font and install
+RUN curl -fLo "JetBrainsMono.zip" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip \
+    && mkdir -p ~/.local/share/fonts \
+    && unzip JetBrainsMono.zip -d ~/.local/share/fonts \
+    && fc-cache -f -v \
+    && rm JetBrainsMono.zip
+
+# Optional: Set the default shell to zsh/fish
+# RUN chsh -s /usr/bin/zsh
+# RUN chsh -s /usr/bin/fish
 
 # Recursively change user for the home directory
 RUN chown -R shell-chad:shell-chad /home/shell-chad
@@ -47,23 +55,22 @@ RUN wget https://github.com/jesseduffield/lazygit/releases/download/v0.41.0/lazy
     &&  tar xzvf lazygit_0.41.0_Linux_arm64.tar.gz \
     && mv lazygit /usr/bin/ \
     && rm lazygit_0.41.0_Linux_arm64.tar.gz LICENSE README.md
-    ## gdu
+## gdu
 RUN curl -L https://github.com/dundee/gdu/releases/latest/download/gdu_linux_amd64.tgz | tar xz \
     && chmod +x gdu_linux_amd64 \
     && mv gdu_linux_amd64 /usr/bin/gdu
 ## bottom
 RUN curl -LO https://github.com/ClementTsang/bottom/releases/download/0.9.6/bottom_0.9.6_amd64.deb \
     && sudo dpkg -i bottom_0.9.6_amd64.deb \
- && rm bottom_0.9.6_amd64.deb
-    ## nvm and node.js
+    && rm bottom_0.9.6_amd64.deb
+## nvm and node.js
 RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash \
     && export NVM_DIR="$HOME/.nvm" \
     && [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" \
     && nvm install node
 
-
-
-# Set the default user to 'shell-chad' -> Required for installation of atuin and zoxide
+# Set the default user to 'shell-chad' -> Required so that installation of atuin and zoxide work (shouldn't be installed
+# via root?)
 USER shell-chad
 
 ## atuin -> RUST 🦀
@@ -113,6 +120,7 @@ RUN echo "alias ls='exa --icons'" >> ~/.zshrc \
     && echo 'eval "$(atuin init zsh)"' >> ~/.zshrc \
     && echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc \
     COPY zsh-configs/.p10k.zsh /home/shell-chad/
+
 ## Disable "[powerlevel10k] fetching gitstatusd" on startup
 RUN echo exit | script -qec zsh /dev/null >/dev/null
 
@@ -132,12 +140,14 @@ RUN echo 'alias ls="exa --icons"' >> ~/.config/fish/config.fish \
 
 # Fish plugins
 RUN fish -c 'curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fisher.fish | source && fisher install jorgebucaran/fisher'
-RUN fish -c 'fisher install ilancosman/tide@v6' \
-    && fish -c 'fisher install jhillyerd/plugin-git' \
-    && fish -c 'fisher install geigerj2/plugin-aiida' \
+RUN fish -c 'fisher install jhillyerd/plugin-git' \
     && fish -c 'fisher install patrickf1/fzf.fish' \
     && fish -c 'fisher install kidonng/zoxide.fish' \
-    && fish -c 'fisher install jethrokuan/z'
+    && fish -c 'fisher install jethrokuan/z' \
+    && fish -c 'fisher install geigerj2/plugin-aiida'
+## We will install this during the seminar
+# && fish -c 'fisher install ilancosman/tide@v6' \
+# && fish -c 'fisher install geigerj2/plugin-aiida'
 
 # Copy tmux config
 COPY tmux-config/.tmux.conf /home/shell-chad/
@@ -148,13 +158,6 @@ RUN wget https://github.com/neovim/neovim/releases/latest/download/nvim-linux64.
     && rm nvim-linux64.tar.gz \
     && git clone --depth 1 https://github.com/AstroNvim/template ~/.config/nvim
 
-# Download the JetBrains Mono Nerd Font ZIP file
-RUN curl -fLo "JetBrainsMono.zip" https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/JetBrainsMono.zip \
-    && mkdir -p ~/.local/share/fonts \
-    && unzip JetBrainsMono.zip -d ~/.local/share/fonts \
-    &&    fc-cache -f -v \
-    && rm JetBrainsMono.zip
-
 # Clean apt cache
 RUN sudo apt clean
 
@@ -164,5 +167,5 @@ RUN bash -c "mkdir -p demo/{dir1,dir2,dir3}/{subdir1,subdir2} && touch demo/dir{
 # Change to aiida-core directory for demonstration
 WORKDIR /home/shell-chad/aiida-core
 
-# Start zsh with autmomatic sourcing ~/.zshrc
-CMD ["/bin/zsh", "-c", "source ~/.zshrc && /bin/zsh"]
+# Start bash with autmomatic sourcing ~/.bashrc
+CMD ["/bin/bash", "-c", "source ~/.bashrc && /bin/bash"]
