@@ -27,3 +27,17 @@ Repository for material for MSD group meeting about sexy shell setups given on 2
 -
 
 ## Installation instructions via `docker`
+
+```shell
+docker buildx build -t msd-gm-docker -f Dockerfile  .
+```
+
+Grab a :coffee:, this is gonna take a few minutes. Afterwards, run:
+
+```shell
+docker run -it msd-gm-docker
+```
+
+and enjoy your beautiful new `$HOME`.
+
+<!-- todo: Buff Doge vs Crying Cheems -->
