@@ -55,7 +55,7 @@ You are now ready to explore your beautiful new `$HOME`.
 
 ## The `$HOME` decor
 
-When the container starts up, you will find a running Ubuntu 22.04 instance with working `bash`, `zsh` and `fish`
+When the container starts up, you will find a running Ubuntu 22.04 instance with working `bash`, `zsh`, and `fish`
 installations. We will explore their configurations - in this order - with increasing time dedicated to each `$SHELL`. The
 main tools that are set up are the following:
 
@@ -67,7 +67,8 @@ main tools that are set up are the following:
   - [oh-my-fish](https://github.com/oh-my-fish/oh-my-fish) (we are not actually using this, but it is listed here for completeness)
 - Prompt customization frameworks:
   - Sorry, seems like no comparable tool exists for `bash` :cry:
-  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k/) for `zsh`
+  - [Powerlevel10k](https://github.com/romkatv/powerlevel10k/) for `zsh` (to avoid having to run the interactive
+    configuration, my `.p10k.zsh` file is part of this repo)
   - [Tide](https://github.com/IlanCosman/tide) for `fish`
 
 ### Tools I cannot live without
@@ -79,7 +80,7 @@ main tools that are set up are the following:
 
 ### More shell candy
 
-- [exa](https://github.com/ogham/exa) &rarr; "Modern replacement for `ls`" (more symbols!!)
+- [exa](https://github.com/ogham/exa) &rarr; "Modern replacement for `ls`" (more symbols!)
   - `exa` archived &rarr; [eza](https://github.com/eza-community/eza)
 
 - [bat](https://github.com/sharkdp/bat) &rarr; "A `cat` clone with wings" (and syntax highlighting :wink:)
@@ -116,8 +117,8 @@ main tools that are set up are the following:
 - `fish` not POSIX compliant (unlike `bash` and `zsh`) &rarr; Different (but, I would argue, better) syntax
 - Different configuration
 
-&rarr; If you don't want to enter this rabbit hole, stay with `zsh` for now (or use my Docker container :innocent:) <br>
-&rarr; But, you can always enter other shells or execute scripts with `bash <your-script>.sh`
+&rarr; If you don't want to enter this rabbit hole, stay with `zsh` for now (or use my `Dockerfile` :innocent:) <br>
+&rarr; But, you can always enter other shells, or execute scripts with `bash <your-script>.sh`
 
 ## Honorable mentions (mileage may vary)
 
@@ -127,8 +128,8 @@ main tools that are set up are the following:
 - [gdu](https://github.com/dundee/gdu) &rarr; Disk usage analyzer
 - [bottom](https://github.com/ClementTsang/bottom) &rarr; "Yet another cross-platform graphical process/system monitor"
 
-- [gh]() &rarr; GitHub `CLI` and [gh act](https://github.com/nektos/act) &rarr; run GitHub actions locally (sorry
-  for all the failed CI activity, `@sphuber` :cry:)
+- [gh](https://github.com/cli/cli) &rarr; GitHub `CLI` and [gh act](https://github.com/nektos/act) &rarr; run GitHub
+  actions locally (sorry for all the failed CI activity, `@sphuber` :cry:)
 
 ## Acknowledgements
 
