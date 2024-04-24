@@ -83,7 +83,12 @@ main tools that are set up are the following:
   - Sorry, seems like no comparable tool exists for `bash` :cry:
   - [Powerlevel10k](https://github.com/romkatv/powerlevel10k/) for `zsh` (to avoid having to run the interactive
     configuration, my `.p10k.zsh` file is part of this repo)
-  - [Tide](https://github.com/IlanCosman/tide) for `fish`
+  - [Tide](https://github.com/IlanCosman/tide) for `fish`:
+    - As a little teaser, let's actually go ahead and install that right now via:
+    ```
+    fisher install ilancosman/tide@v6"
+    ```
+&rarr; Which also gives me an excuse to use fish from now on :grin:
 
 ### Tools I cannot live without
 
@@ -96,11 +101,10 @@ main tools that are set up are the following:
 
 - [exa](https://github.com/ogham/exa) &rarr; "Modern replacement for `ls`" (more symbols!)
   - `exa` archived &rarr; [eza](https://github.com/eza-community/eza)
-
 - [bat](https://github.com/sharkdp/bat) &rarr; "A `cat` clone with wings" (and syntax highlighting :wink:)
 - [entr](https://github.com/eradman/entr) &rarr; Run arbitrary commands on file changes
-- [fzf](https://github.com/junegunn/fzf) &rarr; Command line fuzzy finder
 - `git plugins` for `zsh` (part of `oh-my-zsh`) and `fish` &rarr; [plugin-git](https://github.com/jhillyerd/plugin-git)
+- [fzf](https://github.com/junegunn/fzf) &rarr; Command line fuzzy finder
 - [AstroNvim](https://astronvim.com) &rarr; `(neo)vim` on steroids (don't worry, beloved `VSCode` - you will never be replaced)
   - Good to learn some of the nitty-gritty details, but I discourage trying to customize that yourself, as you'll
   literally need to learn a (probably) new language (Lua)
@@ -116,7 +120,6 @@ main tools that are set up are the following:
 
 ## Why you should use Fish
 
-- First, let's install [tide](https://github.com/IlanCosman/tide) with fisher and configure it
 - Then, let's check out `fish_config`
 - It underlines existing paths/files &rarr; No more "no such file or directory"
 - Neat autosuggestions (to be fair, [this plugin](https://github.com/zsh-users/zsh-autosuggestions) achieves the same in `zsh`)
