@@ -2,7 +2,7 @@
 FROM ubuntu:22.04
 
 # Install vim, git, and other utilities
-RUN apt update && apt install -y sudo apt-utils dialog vim git curl wget unzip fontconfig python3 python3-pip python3-dev python3-venv python-is-python3
+RUN apt update && apt install -y sudo apt-utils dialog vim git curl wget tree unzip fontconfig python3 python3-pip python3-dev python3-venv python-is-python3
 RUN apt install -y software-properties-common
 
 # Install zsh
@@ -74,7 +74,9 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
 USER shell-chad
 
 ## atuin -> RUST 🦀
-RUN curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash
+RUN curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash \
+    && sed -i 's|enter_accept = true|enter_accept = false|g' ~/.config/atuin/config.toml
+
 
 # zoxide -> RUST 🦀
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
@@ -149,6 +151,8 @@ RUN fish -c 'fisher install jhillyerd/plugin-git' \
 # && fish -c 'fisher install ilancosman/tide@v6' \
 # && fish -c 'fisher install geigerj2/plugin-aiida'
 
+# Install `tpm` -> tmux plugin manager
+RUN git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 # Copy tmux config
 COPY tmux-config/.tmux.conf /home/shell-chad/
 
