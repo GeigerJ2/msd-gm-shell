@@ -128,7 +128,7 @@ main tools that are set up are the following:
 
 ## Honorable mentions (mileage may vary)
 
-- [fd-find](https://github.com/sharkdp/fd) &rarr; "A simple, fast and user-friendly alternative to `find`"
+- [fd](https://github.com/sharkdp/fd) &rarr; "A simple, fast and user-friendly alternative to `find`"
 - [ripgrep](https://github.com/BurntSushi/ripgrep) &rarr; Fast, recursive terminal `regex` search
 - [lazygit](https://github.com/jesseduffield/lazygit) &rarr; Terminal `git` UI for keyboard warriors
 - [gdu](https://github.com/dundee/gdu) &rarr; Disk usage analyzer
