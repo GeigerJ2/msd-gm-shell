@@ -92,7 +92,7 @@ main tools that are set up are the following:
 
 ### Tools I cannot live without
 
-- [atuin](https://github.com/atuinsh/atuin) &rarr; Replaces your shell history with an SQLite database (syncronizes between computers :wink:)
+- [atuin](https://github.com/atuinsh/atuin) &rarr; Replaces your shell history with an SQLite database (synchronizes between computers :wink:)
 - [zoxide](https://github.com/ajeetdsouza/zoxide) &rarr; Creates a database of your visited paths
   - Or, alternatively [z](https://github.com/jethrokuan/z) (pure `fish` implementation)
 - [tmux](https://github.com/tmux/tmux) &rarr; Terminal multiplexer (my personal config is part of this repo)
