@@ -74,9 +74,14 @@ RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | b
 USER shell-chad
 
 ## atuin -> RUST 🦀
-RUN curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash \
-    && sed -i 's|enter_accept = true|enter_accept = false|g' ~/.config/atuin/config.toml
+RUN curl -s https://raw.githubusercontent.com/atuinsh/atuin/main/install.sh | bash
 
+## For fish
+RUN mkdir -p ~/.config/fish \
+    && mkdir ~/.config/atuin
+# ~/.config/atuin/config.toml not present on startup... need to run manually
+# sed -i 's|enter_accept = true|enter_accept = false|g' ~/.config/atuin/config.toml
+# Probably is created on first startup
 
 # zoxide -> RUST 🦀
 RUN curl -sS https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | bash
@@ -120,14 +125,13 @@ RUN echo "alias ls='exa --icons'" >> ~/.zshrc \
     && echo 'export POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true' >> ~/.zshrc \
     && echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >> ~/.zshrc \
     && echo 'eval "$(atuin init zsh)"' >> ~/.zshrc \
-    && echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc \
-    COPY zsh-configs/.p10k.zsh /home/shell-chad/
+    && echo 'eval "$(zoxide init zsh)"' >> ~/.zshrc
+
+COPY zsh-config/.p10k.zsh /home/shell-chad/
 
 ## Disable "[powerlevel10k] fetching gitstatusd" on startup
 RUN echo exit | script -qec zsh /dev/null >/dev/null
 
-## For fish
-RUN mkdir -p ~/.config/fish
 RUN echo 'alias ls="exa --icons"' >> ~/.config/fish/config.fish \
     && echo 'alias cat=batcat' >> ~/.config/fish/config.fish \
     && echo 'alias bat=batcat' >> ~/.config/fish/config.fish \
