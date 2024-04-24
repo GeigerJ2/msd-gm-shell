@@ -16,13 +16,19 @@ Repository for the MSD group meeting about sexy shell configurations given on 20
 
 ## What the fuzz is about
 
-Today, we will go on a journey from:
+<details>
+<summary>Today, we will go on a journey from:</summary>
 
-![Crying chemes](memes/crying-chemes.png)
+<img src="memes/crying-chemes.png" width="100%">
 
-to:
+</details>
 
-![Buff doge](memes/buff-doge.png)
+<details>
+<summary>to:</summary>
+
+<img src="memes/buff-doge.png" width="100%">
+
+</details>
 
 <details>
 <summary>Because why spend half an hour on a  task, when you can spend half a day automating it?</summary>
