@@ -57,6 +57,14 @@ docker run -it msd-gm-docker
 
 or attach it to `VSCode` via the [Docker VS Code extension](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-docker).
 
+Tip: If you want to skip the build process, you can also directly run it by using the container registry of this repo via:
+
+```shell
+docker run -it ghcr.io/geigerj2/msd-gm-shell:latest
+```
+
+which will automatically pull the image in the background (thanks, @unkcpz!).
+
 You are now ready to explore your beautiful new `$HOME`.
 
 ## The `$HOME` decor
