@@ -105,9 +105,6 @@ main tools that are set up are the following:
 - [entr](https://github.com/eradman/entr) &rarr; Run arbitrary commands on file changes
 - `git plugins` for `zsh` (part of `oh-my-zsh`) and `fish` &rarr; [plugin-git](https://github.com/jhillyerd/plugin-git)
 - [fzf](https://github.com/junegunn/fzf) &rarr; Command line fuzzy finder
-- [AstroNvim](https://astronvim.com) &rarr; `(neo)vim` on steroids (don't worry, beloved `VSCode` - you will never be replaced)
-  - Good to learn some of the nitty-gritty details, but I discourage trying to customize that yourself, as you'll
-  literally need to learn a (probably) new language (Lua)
 
 <details>
 <summary>AstroNvim screenshot</summary>
@@ -115,8 +112,6 @@ main tools that are set up are the following:
 <img src="https://astronvim.com/_astro/astrodark.CdHFd1a7_eiWC4.webp" width="100%">
 
 </details>
-
-
 
 ## Why you should use Fish
 
@@ -144,9 +139,11 @@ main tools that are set up are the following:
 - [lazygit](https://github.com/jesseduffield/lazygit) &rarr; Terminal `git` UI for keyboard warriors
 - [gdu](https://github.com/dundee/gdu) &rarr; Disk usage analyzer
 - [bottom](https://github.com/ClementTsang/bottom) &rarr; "Yet another cross-platform graphical process/system monitor"
-
 - [gh](https://github.com/cli/cli) &rarr; GitHub `CLI` and [gh act](https://github.com/nektos/act) &rarr; run GitHub
   actions locally (sorry for all the failed CI activity, `@sphuber` :cry:)
+- [AstroNvim](https://astronvim.com) &rarr; `(neo)vim` on steroids (don't worry, beloved `VSCode` - you will never be replaced)
+  - Good to learn some of the nitty-gritty details, but I discourage trying to customize that yourself, as you'll
+  literally need to learn a (probably) new language (Lua)
 
 ## Acknowledgements
 
