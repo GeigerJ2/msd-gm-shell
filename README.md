@@ -104,22 +104,15 @@ main tools that are set up are the following:
 - [bat](https://github.com/sharkdp/bat) &rarr; "A `cat` clone with wings" (and syntax highlighting :wink:)
 - [entr](https://github.com/eradman/entr) &rarr; Run arbitrary commands on file changes
 - `git plugins` for `zsh` (part of `oh-my-zsh`) and `fish` &rarr; [plugin-git](https://github.com/jhillyerd/plugin-git)
-- [fzf](https://github.com/junegunn/fzf) &rarr; Command line fuzzy finder
-
-<details>
-<summary>AstroNvim screenshot</summary>
-
-<img src="https://astronvim.com/_astro/astrodark.CdHFd1a7_eiWC4.webp" width="100%">
-
-</details>
 
 ## Why you should use Fish
 
-- Then, let's check out `fish_config`
 - It underlines existing paths/files &rarr; No more "no such file or directory"
 - Neat autosuggestions (to be fair, [this plugin](https://github.com/zsh-users/zsh-autosuggestions) achieves the same in `zsh`)
+- Then, let's check out `fish_config`
 - Interactive `CLI` command/options search
 - Cherry on top &rarr; [fzf fish plugin](https://github.com/PatrickF1/fzf.fish)
+  - Based on [fzf](https://github.com/junegunn/fzf) &rarr; Command line fuzzy finder
 - And a shameless self-promotion of [my `aiida` fish plugin](https://github.com/GeigerJ2/plugin-aiida) :rocket:
 
 ([even more fish](https://github.com/jorgebucaran/awsm.fish))
@@ -127,7 +120,7 @@ main tools that are set up are the following:
 ### A caveat
 
 - `fish` not POSIX compliant (unlike `bash` and `zsh`) &rarr; Different (but, I would argue, better) syntax
-- Different configuration
+- Different configuration (setting environment variables, defining functions, no `~/.fishrc` file)
 
 &rarr; If you don't want to enter this rabbit hole, stay with `zsh` for now (or use my `Dockerfile` :innocent:) <br>
 &rarr; But, you can always enter other shells, or execute scripts with `bash <your-script>.sh`
@@ -144,6 +137,13 @@ main tools that are set up are the following:
 - [AstroNvim](https://astronvim.com) &rarr; `(neo)vim` on steroids (don't worry, beloved `VSCode` - you will never be replaced)
   - Good to learn some of the nitty-gritty details, but I discourage trying to customize that yourself, as you'll
   literally need to learn a (probably) new language (Lua)
+
+<details>
+<summary>AstroNvim screenshot</summary>
+
+<img src="https://astronvim.com/_astro/astrodark.CdHFd1a7_eiWC4.webp" width="100%">
+
+</details>
 
 ## Acknowledgements
 
