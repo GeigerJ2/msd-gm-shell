@@ -86,16 +86,16 @@ main tools that are set up are the following:
   - [Tide](https://github.com/IlanCosman/tide) for `fish`:
     - As a little teaser, let's actually go ahead and install that right now via:
     ```
-    fisher install ilancosman/tide@v6"
+    fisher install ilancosman/tide@v6
     ```
 &rarr; Which also gives me an excuse to use fish from now on :grin:
 
 ### Tools I cannot live without
 
+- [tmux](https://github.com/tmux/tmux) &rarr; Terminal multiplexer (my personal config is part of this repo)
 - [atuin](https://github.com/atuinsh/atuin) &rarr; Replaces your shell history with an SQLite database (synchronizes between computers :wink:)
 - [zoxide](https://github.com/ajeetdsouza/zoxide) &rarr; Creates a database of your visited paths
   - Or, alternatively [z](https://github.com/jethrokuan/z) (pure `fish` implementation)
-- [tmux](https://github.com/tmux/tmux) &rarr; Terminal multiplexer (my personal config is part of this repo)
 
 ### More shell candy
 
