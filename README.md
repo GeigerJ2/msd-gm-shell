@@ -3,8 +3,8 @@
 Repository for the MSD group meeting about sexy shell configurations given on 2024-04-25 by Julian Geiger at PSI.
 
 - [Turn your `$SHELL` into a beautiful `$HOME`](#turn-your-shell-into-a-beautiful-home)
-  - [What the fuzz is about](#what-the-fuzz-is-about)
   - [Installation instructions via `docker`](#installation-instructions-via-docker)
+  - [What the fuzz is about](#what-the-fuzz-is-about)
   - [The `$HOME` decor](#the-home-decor)
     - [Turn-key solutions](#turn-key-solutions)
     - [Tools I cannot live without](#tools-i-cannot-live-without)
@@ -13,31 +13,6 @@ Repository for the MSD group meeting about sexy shell configurations given on 20
     - [A caveat](#a-caveat)
   - [Honorable mentions (mileage may vary)](#honorable-mentions-mileage-may-vary)
   - [Acknowledgements](#acknowledgements)
-
-## What the fuzz is about
-
-<details>
-<summary>Today, we will go on a journey from:</summary>
-
-<img src="memes/crying-chemes.png" width="100%">
-
-</details>
-
-<details>
-<summary>to:</summary>
-
-<img src="memes/buff-doge.png" width="100%">
-
-</details>
-
-<details>
-<summary>Because why spend half an hour on a  task, when you can spend half a day automating it?</summary>
-
-<img src="https://i.imgflip.com/8ns57i.jpg" width="100%">
-
-</details>
-
-So buckle up!
 
 ## Installation instructions via `docker`
 
@@ -66,6 +41,31 @@ docker run -it ghcr.io/geigerj2/msd-gm-shell:latest
 which will automatically pull the image in the background (thanks, @unkcpz!).
 
 You are now ready to explore your beautiful new `$HOME`.
+
+## What the fuzz is about
+
+<details>
+<summary>Today, we will go on a journey from:</summary>
+
+<img src="memes/crying-chemes.png" width="100%">
+
+</details>
+
+<details>
+<summary>to:</summary>
+
+<img src="memes/buff-doge.png" width="100%">
+
+</details>
+
+<details>
+<summary>Because why spend half an hour on a  task, when you can spend half a day automating it?</summary>
+
+<img src="https://i.imgflip.com/8ns57i.jpg" width="100%">
+
+</details>
+
+So buckle up!
 
 ## The `$HOME` decor
 
@@ -127,13 +127,13 @@ main tools that are set up are the following:
 
 ## Honorable mentions (mileage may vary)
 
+- [gh](https://github.com/cli/cli) &rarr; GitHub `CLI` and [gh act](https://github.com/nektos/act) &rarr; run GitHub
+  actions locally (sorry for all the failed CI activity, `@sphuber` :cry:)
 - [fd](https://github.com/sharkdp/fd) &rarr; "A simple, fast and user-friendly alternative to `find`"
 - [ripgrep](https://github.com/BurntSushi/ripgrep) &rarr; Fast, recursive terminal `regex` search
 - [lazygit](https://github.com/jesseduffield/lazygit) &rarr; Terminal `git` UI for keyboard warriors
 - [gdu](https://github.com/dundee/gdu) &rarr; Disk usage analyzer
 - [bottom](https://github.com/ClementTsang/bottom) &rarr; "Yet another cross-platform graphical process/system monitor"
-- [gh](https://github.com/cli/cli) &rarr; GitHub `CLI` and [gh act](https://github.com/nektos/act) &rarr; run GitHub
-  actions locally (sorry for all the failed CI activity, `@sphuber` :cry:)
 - [AstroNvim](https://astronvim.com) &rarr; `(neo)vim` on steroids (don't worry, beloved `VSCode` - you will never be replaced)
   - Good to learn some of the nitty-gritty details, but I discourage trying to customize that yourself, as you'll
   literally need to learn a (probably) new language (Lua)
